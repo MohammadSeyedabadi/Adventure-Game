@@ -81,7 +81,7 @@ public class EnemyController : MonoBehaviour
         broken = false;
         rigidbody2d.simulated = false;
         footstepSource.Stop();
-        animator.SetTrigger("Fixed");
         FixAudio.PlayOneShot(FixAudio.clip);
+        animator.SetTrigger("Fixed");
     }
 }
