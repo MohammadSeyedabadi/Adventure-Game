@@ -11,9 +11,7 @@ public class DamageZone : MonoBehaviour
         if (controller != null && !controller.Invincible)
         {
             controller.ChangeHealth(-1);
-            Debug.Log(controller.Invincible + "EXECUTE NEXT LINE");
             controller.PlaySound(playerHit);
-            // playerHit.Play();
         }
     }
 }

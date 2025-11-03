@@ -3,13 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
-    public AudioClip throwProjectile;
-    public AudioSource footstepSource;
-    public AudioSource sfxSource;
     public InputAction talkAction;
     // The variable type GameObject can contain the data for the Projectile prefab; prefabs are GameObjects saved as reusable assets.
     // This variable is public, so you can assign any GameObject prefab to this variable in the Inspector.
+    public AudioSource footstepSource;
+    public AudioSource sfxSource;
     public GameObject projectilePrefab;
+    public AudioClip throwProjectile;
     /// <summary>
     /// The Animator type variable will store the Animator component reference, just as you did in the EnemyController script.
     // The moveDirection variable is important because the player character can stand still, whereas the enemy is always moving. When the character is still, both Move X and Move Y will be 0, so the State Machine needs to be explicitly provided with a direction, which this variable provides.
