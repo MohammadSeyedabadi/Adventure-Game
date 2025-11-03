@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public AudioClip throwProjectile;
-    AudioSource footstepSource;
-    AudioSource audioSource;
+    public AudioSource footstepSource;
+    public AudioSource sfxSource;
     public InputAction talkAction;
     // The variable type GameObject can contain the data for the Projectile prefab; prefabs are GameObjects saved as reusable assets.
     // This variable is public, so you can assign any GameObject prefab to this variable in the Inspector.
@@ -45,8 +45,6 @@ public class PlayerController : MonoBehaviour
         // Application.targetFrameRate = 10;
         ///
         // LeftAction.Enable();
-        footstepSource = GetComponent<AudioSource>();
-        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         MoveAction.Enable();
         talkAction.Enable();
@@ -95,20 +93,16 @@ public class PlayerController : MonoBehaviour
         // transform.position = position;
         // Vector2 move = MoveAction.ReadValue<Vector2>(); // move is also 1 or -1 or 0 like when we did it manually
         move = MoveAction.ReadValue<Vector2>();
-        // if (move.magnitude > 0.1f)
-        // {
-        //     if (!footstepSource.isPlaying)
-        //     {
-        //         footstepSource.Play();
-        //     }
-        // }
-        // else
-        // {
-        //     if (footstepSource.isPlaying)
-        //     {
-        //         footstepSource.Stop();
-        //     }
-        // }
+        if (move.magnitude > 0.1f)
+        {
+            if (!footstepSource.isPlaying)
+                footstepSource.Play();
+        }
+        else
+        {
+            if (footstepSource.isPlaying)
+                footstepSource.Stop();
+        }
         // Debug.Log(move);
         // Vector2 position = (Vector2)transform.position + move * 0.1f;
         // Vector2 position = (Vector2)transform.position + move * 3.0f * Time.deltaTime;
@@ -136,25 +130,18 @@ public class PlayerController : MonoBehaviour
         {
             // Time.deltaTime is the interval in seconds from the previous frame to the current one, so the instruction reduces the damageCooldown timer value every frame.
             damageCooldown -= Time.deltaTime; // after one second, one unit is subtracted from damageCooldown
-            if (damageCooldown < 0)
-            {
-                isInvincible = false;
-            }
+            if (damageCooldown < 0) isInvincible = false;
+
         }
 
         // if (Input.GetKeyDown(KeyCode.C))
         // {
         //     Launch();
         // }
-        if (Keyboard.current.cKey.wasPressedThisFrame)
-        {
-            Launch();
-        }
+        if (Keyboard.current.cKey.wasPressedThisFrame) Launch();
 
-        if (Keyboard.current.xKey.wasPressedThisFrame)
-        {
-            FindFriend();
-        }
+        if (Keyboard.current.xKey.wasPressedThisFrame) FindFriend();
+
     }
 
     // FixedUpdate has the same call rate as the physics system 
@@ -172,10 +159,8 @@ public class PlayerController : MonoBehaviour
     {
         if (amount < 0)
         {
-            if (isInvincible)
-            {
-                return;
-            }
+            if (isInvincible) return;
+
             isInvincible = true;
             damageCooldown = timeInvincible;
             // This sets the Hit parameter to True if the player character is taking damage, so the correct animation plays.
@@ -219,16 +204,13 @@ public class PlayerController : MonoBehaviour
             // Debug.Log("Raycast has hit the object " + hit.collider.gameObject);
             //Note: GetComponent is relatively resource-intensive, so avoid calling it every frame. In this situation, GetComponent is only called when the player provides the correct input.
             NonPlayerCharacter character = hit.collider.GetComponent<NonPlayerCharacter>();
-            if (character != null)
-            {
-                UIHandler.instance.DisplayDialogue();
-            }
+            if (character != null) UIHandler.instance.DisplayDialogue();
         }
     }
 
     public void PlaySound(AudioClip clip)
     {
         // for health collectabel, when got hit, throwing projectile
-        audioSource.PlayOneShot(clip);
+        sfxSource.PlayOneShot(clip);
     }
 }

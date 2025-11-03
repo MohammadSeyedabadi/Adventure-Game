@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    AudioSource walkingAudio;
+    public AudioClip playerHit;
+    AudioSource footstepSource;
     // The enemies start off broken and need to be fixed by the player — this variable stores that state and sets the enemy to initialize in the broken state.
     bool broken = true;
     Animator animator;
@@ -16,7 +17,7 @@ public class EnemyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        walkingAudio = GetComponent<AudioSource>();
+        footstepSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         timer = changeTime;
         rigidbody2d = GetComponent<Rigidbody2D>();
@@ -67,6 +68,7 @@ public class EnemyController : MonoBehaviour
         if (player != null)
         {
             player.ChangeHealth(-1);
+            player.PlaySound(playerHit);
         }
     }
 
@@ -77,7 +79,7 @@ public class EnemyController : MonoBehaviour
     {
         broken = false;
         rigidbody2d.simulated = false;
-        walkingAudio.Stop();
+        footstepSource.Stop();
         animator.SetTrigger("Fixed");
     }
 }
