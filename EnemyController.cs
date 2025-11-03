@@ -3,7 +3,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public AudioClip playerHit;
-    AudioSource footstepSource;
+    public AudioSource footstepSource;
+    public AudioSource FixAudio;
     // The enemies start off broken and need to be fixed by the player — this variable stores that state and sets the enemy to initialize in the broken state.
     bool broken = true;
     Animator animator;
@@ -81,5 +82,6 @@ public class EnemyController : MonoBehaviour
         rigidbody2d.simulated = false;
         footstepSource.Stop();
         animator.SetTrigger("Fixed");
+        FixAudio.PlayOneShot(FixAudio.clip);
     }
 }
