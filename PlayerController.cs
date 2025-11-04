@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem smokeEffect;
     public InputAction talkAction;
     // The variable type GameObject can contain the data for the Projectile prefab; prefabs are GameObjects saved as reusable assets.
     // This variable is public, so you can assign any GameObject prefab to this variable in the Inspector.
@@ -165,6 +166,8 @@ public class PlayerController : MonoBehaviour
             damageCooldown = timeInvincible;
             // This sets the Hit parameter to True if the player character is taking damage, so the correct animation plays.
             animator.SetTrigger("Hit");
+            ParticleSystem smoke = Instantiate(smokeEffect, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+            smoke.transform.SetParent(transform);
         }
         //The first parameter is the value that needs to be restricted (currentHealth + amount).
         // The second parameter is the minimum allowed value (0).
