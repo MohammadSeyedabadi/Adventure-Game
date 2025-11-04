@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem healEffect;
     public ParticleSystem smokeEffect;
     public InputAction talkAction;
     // The variable type GameObject can contain the data for the Projectile prefab; prefabs are GameObjects saved as reusable assets.
@@ -168,6 +169,11 @@ public class PlayerController : MonoBehaviour
             animator.SetTrigger("Hit");
             ParticleSystem smoke = Instantiate(smokeEffect, transform.position + Vector3.up * 0.5f, Quaternion.identity);
             smoke.transform.SetParent(transform);
+        }
+        else
+        {
+             ParticleSystem heal = Instantiate(healEffect, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+            heal.transform.SetParent(transform);
         }
         //The first parameter is the value that needs to be restricted (currentHealth + amount).
         // The second parameter is the minimum allowed value (0).

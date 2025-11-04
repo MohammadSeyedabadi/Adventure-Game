@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class HealthCollectible : MonoBehaviour
 {
+    
     // At the top of the class, add a public AudioClip type class member:
     public AudioClip collectedClip;
     // OnTriggerEnter2D is a specific Unity function that is called on in the first frame when the physics system detects a GameObject with a Rigidbody component hitting the GameObject collider that is a trigger.
