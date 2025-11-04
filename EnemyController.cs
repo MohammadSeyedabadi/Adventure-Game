@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    // If a public member is a component type rather than a GameObject, when you assign a GameObject with the specified component then Unity will store a reference to the component.
+    // This approach to getting the reference means that you don’t need to use GetComponent and also means that you can’t accidentally assign a GameObject without the specified component.
+    public ParticleSystem smokeEffect;
     public AudioClip playerHit;
     public AudioSource footstepSource;
     public AudioSource FixAudio;
@@ -83,5 +86,7 @@ public class EnemyController : MonoBehaviour
         footstepSource.Stop();
         FixAudio.PlayOneShot(FixAudio.clip);
         animator.SetTrigger("Fixed");
+        // This instruction stops the particle system, rather than destroying it. When you destroy a particle system, you also destroy all the particles that it is currently handling. Stopping the system means that no new particles will be created, so it’s a more natural-looking way to end the effect.
+        smokeEffect.Stop();
     }
 }
