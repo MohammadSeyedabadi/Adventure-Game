@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        footstepSource = GetComponent<AudioSource>();
+        // footstepSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
         timer = changeTime;
         rigidbody2d = GetComponent<Rigidbody2D>();
