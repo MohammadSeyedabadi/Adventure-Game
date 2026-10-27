@@ -1,0 +1,12 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="NPCDialogue" src="project://database/Assets/Ruby%20UI/NPCDialogue.uxml?fileID=9197481963319205126&amp;guid=0a3711b0ef3094045a4b6e85d230b4a4&amp;type=3#NPCDialogue" />
+    <ui:VisualElement name="HealthBarBackground" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/UIHealthFrame.png?fileID=21300000&amp;guid=e04807cd45105ec409b00463fe6ab7b1&amp;type=3#UIHealthFrame&quot;); width: 442px; height: 200px; -unity-background-scale-mode: scale-to-fit;">
+        <ui:VisualElement name="HealthBarContainer" style="flex-grow: 1; background-image: none; position: absolute; top: 59px; left: 183px; width: 55%; height: 34%; flex-direction: column;">
+            <ui:VisualElement name="HealthBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/UIHealthBar.png?fileID=21300000&amp;guid=be3322f3a1dbc6e44b25b63f3bb91e16&amp;type=3#UIHealthBar&quot;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="CharacterPortrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ruby/UI/CharacterPortrait.png?fileID=21300000&amp;guid=374193bc7008fa34ab9b2bbca376937b&amp;type=3#CharacterPortrait&quot;); -unity-background-scale-mode: scale-to-fit; position: absolute; height: 146px; width: 125px; top: 22px; left: 43px;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="NpcTextContainer" style="flex-grow: 1; position: absolute; top: 70%; left: 10%; right: 10%; bottom: 0%;">
+        <ui:Instance template="NPCDialogue" name="TemplateContainer" style="width: 100%; height: 100%;" />
+    </ui:VisualElement>
+</ui:UXML>

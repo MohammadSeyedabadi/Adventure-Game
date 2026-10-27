@@ -1,0 +1,10 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="NPCDialogue" src="project://database/Assets/Art/SugarLand/UI/NPCDialogue.uxml?fileID=9197481963319205126&amp;guid=898302b635159fe4a82e4ee2565e57af&amp;type=3#NPCDialogue" />
+    <ui:VisualElement name="HealthBarBackground" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Art/SugarLand/UI/UIHealthFrame.png?fileID=21300000&amp;guid=587ae468f8de9ec419f7f86c5433bcbf&amp;type=3#UIHealthFrame&quot;); width: 442px; height: 200px; -unity-background-scale-mode: scale-to-fit;">
+        <ui:VisualElement name="HealthBarContainer" style="flex-grow: 1; position: absolute; top: 56px; left: 189px; width: 239px; height: 82px;">
+            <ui:VisualElement name="HealthBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/SugarLand/UI/UIHealthBar.png?fileID=21300000&amp;guid=b28ee55f43291f14ab9219808f397b88&amp;type=3#UIHealthBar&quot;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="CharacterPortrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/SugarLand/UI/CharacterPortrait.png?fileID=21300000&amp;guid=e8af26c6841fc05459ccaf23dbab2b63&amp;type=3#CharacterPortrait&quot;); -unity-background-scale-mode: scale-to-fit; position: absolute; height: 147px; width: 175px; top: 19px; left: 16px;" />
+    </ui:VisualElement>
+    <ui:Instance template="NPCDialogue" name="NpcTextContainer" style="position: absolute; left: 10%; right: 10%; top: 70%; bottom: 0%;" />
+</ui:UXML>

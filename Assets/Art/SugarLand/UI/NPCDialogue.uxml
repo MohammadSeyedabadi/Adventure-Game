@@ -1,0 +1,5 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="Background" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/SugarLand/UI/UIDialogueBox.png?fileID=21300000&amp;guid=cd17cea45c10d0943a1a8f2485b35902&amp;type=3#UIDialogueBox&quot;); width: 100%; height: 100%;">
+        <ui:Label text="Hey! Help me fix all these broken robots!!!" name="Label" style="width: 100%; height: 100%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 5%; padding-right: 5%; padding-bottom: 5%; padding-left: 5%; white-space: normal; font-size: 20px; -unity-font-style: bold;" />
+    </ui:VisualElement>
+</ui:UXML>

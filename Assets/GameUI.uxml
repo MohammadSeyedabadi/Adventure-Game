@@ -1,0 +1,12 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="NPCDialogue" src="project://database/Assets/NPCDialogue.uxml?fileID=9197481963319205126&amp;guid=24479ed6aef886b4a973cf0a26269975&amp;type=3#NPCDialogue" />
+    <ui:VisualElement name="HealthBarBackground" style="flex-grow: 0; background-image: url(&quot;project://database/Assets/Art/Ducko/UI/UIHealthFrame.png?fileID=21300000&amp;guid=b47cdbd2062c5e64ba5a0bf3f6b045b1&amp;type=3#UIHealthFrame&quot;); width: 442px; height: 200px; -unity-background-scale-mode: scale-to-fit;">
+        <ui:VisualElement name="HealthBarContainer" style="flex-grow: 1; position: absolute; top: 59px; left: 184px; width: 243px; height: 69px;">
+            <ui:VisualElement name="HealthBar" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ducko/UI/UIHealthBar.png?fileID=21300000&amp;guid=39fe000f2b6d9d04b93d6a76310e29aa&amp;type=3#UIHealthBar&quot;); position: relative; height: auto; width: auto;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="CharacterPortrait" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Art/Ducko/UI/CharacterPortrait.png?fileID=21300000&amp;guid=0332b35b8fe3cf8458eb0558889493d1&amp;type=3#CharacterPortrait&quot;); -unity-background-scale-mode: scale-to-fit; position: absolute; width: 212px; height: 147px; top: 25px; left: -15px;" />
+    </ui:VisualElement>
+    <ui:VisualElement name="NpcTextContainer" style="flex-grow: 1;">
+        <ui:Instance template="NPCDialogue" style="position: absolute; left: 1%; right: 1%; bottom: 3%; height: 15%;" />
+    </ui:VisualElement>
+</ui:UXML>
